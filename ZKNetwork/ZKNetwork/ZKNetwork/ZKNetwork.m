@@ -85,6 +85,29 @@
 
 // ------
 
+@implementation HTTPResponse
+
+@end
+
+// ------
+
+@interface ZKJSONResponseSerializer : AFJSONResponseSerializer
+@end
+
+@implementation ZKJSONResponseSerializer
+
+- (id)responseObjectForResponse:(NSURLResponse *)response data:(NSData *)data error:(NSError *__autoreleasing  _Nullable *)error {
+    id responseObj = [super responseObjectForResponse:response data:data error:error];
+    if (!responseObj && *error && data && [data length]) {
+        responseObj = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    }
+    return responseObj;
+}
+
+@end
+
+// ------
+
 @implementation ZKNetwork
 
 @end

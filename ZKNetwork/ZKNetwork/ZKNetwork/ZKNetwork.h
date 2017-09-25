@@ -35,6 +35,25 @@
 
 // ------
 
+@interface HTTPResponse : NSObject
+
+@property (nonatomic, assign) BOOL isCache;
+@property (nonatomic, strong) NSURL *requestURL;
+@property (nonatomic, strong) NSDictionary *params;
+@property (nonatomic, strong) id payload;
+@property (nonatomic, copy) NSString *hint;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) id extra;
+
+@end
+
+// ------
+
+typedef void (^HttpTaskRequestHandler)(NSMutableURLRequest *request);
+typedef void (^HttpTaskProgressHandler)(int64_t completedUnitCount, int64_t totalUnitCount);
+typedef void (^HttpTaskCompleteHandler)(BOOL successed, HTTPResponse *response);
+
 @interface ZKNetwork : NSObject
 
 @end
