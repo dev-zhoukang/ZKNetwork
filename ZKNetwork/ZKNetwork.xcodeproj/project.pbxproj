@@ -11,9 +11,11 @@
 		58F790671F78DC21007149E1 /* ZKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F790661F78DC21007149E1 /* ZKMainViewController.m */; };
 		58F7907F1F78DDC1007149E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7907D1F78DDC1007149E1 /* main.m */; };
 		58F790A41F78DF5B007149E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F790A21F78DF31007149E1 /* LaunchScreen.storyboard */; };
+		D9350431344BE26FCD019F56 /* libPods-ZKNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520D63E42CA493A45165B972 /* libPods-ZKNetwork.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520D63E42CA493A45165B972 /* libPods-ZKNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZKNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F7905F1F78DC21007149E1 /* ZKNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F790621F78DC21007149E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58F790631F78DC21007149E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -23,6 +25,8 @@
 		58F7907D1F78DDC1007149E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		58F7907E1F78DDC1007149E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58F790A31F78DF31007149E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ZKNetwork/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		648FB73CD0190A16A6C8A963 /* Pods-ZKNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKNetwork/Pods-ZKNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		751C10CF283DF3002DDA379D /* Pods-ZKNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZKNetwork/Pods-ZKNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +34,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9350431344BE26FCD019F56 /* libPods-ZKNetwork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		533C072D7172C05519886FC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				751C10CF283DF3002DDA379D /* Pods-ZKNetwork.debug.xcconfig */,
+				648FB73CD0190A16A6C8A963 /* Pods-ZKNetwork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		58F790561F78DC21007149E1 = {
 			isa = PBXGroup;
 			children = (
 				58F790611F78DC21007149E1 /* ZKNetwork */,
 				58F790601F78DC21007149E1 /* Products */,
+				533C072D7172C05519886FC1 /* Pods */,
+				A3CA5155E6E29401C4CCE50B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +75,7 @@
 				58F790631F78DC21007149E1 /* AppDelegate.m */,
 				58F790651F78DC21007149E1 /* ZKMainViewController.h */,
 				58F790661F78DC21007149E1 /* ZKMainViewController.m */,
+				58F790A51F78E373007149E1 /* ZKNetwork */,
 				58F790781F78DD63007149E1 /* Supporting */,
 			);
 			path = ZKNetwork;
@@ -75,6 +92,21 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		58F790A51F78E373007149E1 /* ZKNetwork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZKNetwork;
+			sourceTree = "<group>";
+		};
+		A3CA5155E6E29401C4CCE50B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				520D63E42CA493A45165B972 /* libPods-ZKNetwork.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58F790751F78DC21007149E1 /* Build configuration list for PBXNativeTarget "ZKNetwork" */;
 			buildPhases = (
+				D4619D49C072261308D25249 /* [CP] Check Pods Manifest.lock */,
 				58F7905B1F78DC21007149E1 /* Sources */,
 				58F7905C1F78DC21007149E1 /* Frameworks */,
 				58F7905D1F78DC21007149E1 /* Resources */,
+				D1FFBF01CAFAB62329E471F7 /* [CP] Embed Pods Frameworks */,
+				6F68A4EE4671482CB1DBB6C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,6 +173,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F68A4EE4671482CB1DBB6C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZKNetwork/Pods-ZKNetwork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1FFBF01CAFAB62329E471F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZKNetwork/Pods-ZKNetwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4619D49C072261308D25249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZKNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58F7905B1F78DC21007149E1 /* Sources */ = {
@@ -270,6 +356,7 @@
 		};
 		58F790761F78DC21007149E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 751C10CF283DF3002DDA379D /* Pods-ZKNetwork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -285,6 +372,7 @@
 		};
 		58F790771F78DC21007149E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 648FB73CD0190A16A6C8A963 /* Pods-ZKNetwork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
