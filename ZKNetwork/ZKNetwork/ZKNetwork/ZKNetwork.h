@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 
+#define INIT_DOMAIN @"http://api.baidu.com"
+
 @interface NSString (ZK_HTTP)
 
 - (NSString *)zk_encode;
