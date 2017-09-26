@@ -56,4 +56,21 @@ typedef void (^HttpTaskCompleteHandler)(BOOL successed, HTTPResponse *response);
 
 @interface ZKNetwork : NSObject
 
++ (instancetype)shareInstance;
+@property (nonatomic, strong, readonly) AFHTTPSessionManager *sessionManager;
+@property (nonatomic, assign, readonly) AFNetworkReachabilityStatus networkStatus;
+- (NSString *)getRequestURLWithURL:(NSString *)URL;
++ (NSDictionary *)getRequestBodyWithParams:(NSDictionary *)params;
+
+// GET
+- (NSURLSessionDataTask *)getRequestToURL:(NSString *)URL params:(NSDictionary *)params complete:(HttpTaskCompleteHandler)complete;
+- (NSURLSessionDataTask *)getCacheToURL:(NSString *)URL params:(NSDictionary *)params complete:(HttpTaskCompleteHandler)complete;
+
+// POST
+- (NSURLSessionDataTask *)postRequestToURL:(NSString *)URL params:(NSDictionary *)params complete:(HttpTaskCompleteHandler)complete;
+- (NSURLSessionDataTask *)postCacheToURL:(NSString *)URL params:(NSDictionary *)params complete:(HttpTaskCompleteHandler)complete;
+
+// PUT
+- (NSURLSessionDataTask *)putRequestToUrl:(NSString *)url params:(NSDictionary *)params complete:(HttpTaskCompleteHandler)complete;
+
 @end
